@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "tsc",
     "start": "nodemon --exec ts-node ./server.ts",
     "dev": "ts-node ./server.ts",
     "prisma": "prisma"
@@ -23,6 +24,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "vercel": "^31.2.2"
   }
 }
