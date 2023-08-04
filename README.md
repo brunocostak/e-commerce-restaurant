@@ -1,8 +1,37 @@
-## Uso da API 🍔🍕🍩
+Introdução do README.md
 
-Antes de usar a API, certifique-se de executar o comando `npm install` dentro das pastas `backend` e `frontend` para instalar as dependências necessárias. Em seguida, inicie o servidor e o frontend executando `npm run dev` dentro das respectivas pastas.
+# API de Alimentos 🍔🍕🍩
 
-### Endpoints da API 🌐
+Bem-vindo à API de Alimentos! Esta é uma API RESTful que permite gerenciar registros de alimentos e usuários em um banco de dados. Com ela, você pode realizar operações como criação, leitura, atualização e exclusão de alimentos, além de autenticação de usuários.
+
+## Configuração do Ambiente
+
+Antes de começar a utilizar a API, siga os passos abaixo para configurar o ambiente corretamente:
+
+1. Certifique-se de ter o Node.js e o npm instalados em seu computador.
+
+2. Dentro das pastas `backend` e `frontend`, execute o comando `npm install` para instalar as dependências necessárias.
+
+3. No diretório raiz do projeto, entre na pasta "app" onde o código da API está localizado.
+
+4. Execute o comando `docker-compose up --build`. Isso iniciará o ambiente Docker, onde a API será executada juntamente com o banco de dados.
+
+5. Após o Docker estar em execução, entre no diretório "app/backend" usando o seguinte comando: `cd app/backend`.
+
+6. No diretório "app/backend", execute os seguintes comandos para criar e configurar o banco de dados usando o Prisma:
+
+```
+npx prisma generate
+npx prisma migrate dev --name init
+```
+
+O comando `npx prisma generate` é usado para gerar os artefatos do Prisma com base no schema do banco de dados.
+
+O comando `npx prisma migrate dev --name init` é usado para criar e aplicar a primeira migração no banco de dados, chamada "init".
+
+## Endpoints da API 🌐
+
+A API oferece os seguintes endpoints para interação:
 
 **Alimentos 🍔:**
 
@@ -24,7 +53,9 @@ Antes de usar a API, certifique-se de executar o comando `npm install` dentro da
 
 - `POST /api/user/register`: Registra um novo usuário. Recebe um objeto JSON com os detalhes do usuário (email, nome e senha) e retorna o novo registro criado.
 
-### Exemplos de uso 📝
+## Exemplos de Uso 📝
+
+Aqui estão alguns exemplos de como usar os endpoints da API:
 
 **Criação de Alimento 🍔:**
 
@@ -101,12 +132,14 @@ POST /api/user/register
 }
 ```
 
-### Observações 📌
+## Observações 📌
 
-- Substitua `localhost:3000` pelo endereço do servidor onde a API está hospedada.
+- Substitua `localhost:3000` pelo endereço do servidor onde a API está hospedada, caso seja necessário.
 
 - Certifique-se de enviar as requisições com os dados corretos nos corpos das requisições e no formato JSON.
 
 - A API pode exigir autenticação para algumas rotas, dependendo da sua configuração. Certifique-se de estar autenticado corretamente, se necessário, para acessar as rotas protegidas.
 
-🔧 Divirta-se usando a API! Em caso de dúvidas ou problemas, consulte a documentação ou contate o desenvolvedor.
+- Divirta-se usando a API! Em caso de dúvidas ou problemas, consulte a documentação ou contate o desenvolvedor.
+
+Agora que o ambiente está configurado, você pode aproveitar todos os recursos da API para criar e gerenciar registros de alimentos e usuários. Bom desenvolvimento! 🚀
